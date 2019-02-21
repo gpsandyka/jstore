@@ -8,7 +8,10 @@
 public class Invoice
 {
     // instance variables - replace the example below with your own
-    private int x;
+    protected int id;
+    protected int idItem;
+    protected String date;
+    protected int totalPrice;
 
     /**
      * Constructor for objects of class Invoice
@@ -16,7 +19,6 @@ public class Invoice
     public Invoice()
     {
         // initialise instance variables
-        x = 0;
     }
 
     /**
@@ -25,9 +27,89 @@ public class Invoice
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public int getId()
     {
         // put your code here
-        return x + y;
+        return 0;
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public String getIdItem()
+    {
+        // put your code here
+        return "";
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public String getDate()
+    {
+        // put your code here
+        return "";
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int getTotalPrice()
+    {
+        // put your code here
+        return 0;
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setId(int id)
+    {
+        // put your code here
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setIdItem(int idItem)
+    {
+        // put your code here
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setDate(String date)
+    {
+        // put your code here
+    }
+    
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public void setTotalPrice(int totalPrice)
+    {
+        // put your code here
     }
 }
