@@ -1,45 +1,60 @@
 
 /**
- * Write a description of class Database_Item here.
+ * Tempat database item.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sandyka Gunnisyah Putra
+ * @version 1.0
+ * @since 28-02-2019
  */
 public class Database_Item
 {
     // instance variables - replace the example below with your own
     private String listItem[];
+    private Item item;
 
-     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+    /**
+     * Untuk menambah item
+     * 
+     * @param item
+     * @return boolean
      */
-    public void addItem()
+    public boolean addItem(Item item)
     {
         // put your code here
+        return false;
+    }
+
+    /**
+     * Untuk menghapus item
+     * 
+     * @param item
+     * @return boolean
+     */
+    public boolean removeItem(Item item)
+    {
+        // put your code here
+        return false;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan item
+     * 
+     * @return Item
      */
-    public void removeItem()
+    public Item getItem()
     {
         // put your code here
+        return item;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan daftar item
+     * 
+     * @return String[]
      */
-    public void getItemDatabase()
+    public String[] getItemDatabase()
     {
         // put your code here
+        return listItem;
     }
 }

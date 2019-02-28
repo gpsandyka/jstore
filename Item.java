@@ -1,141 +1,152 @@
 
 /**
- * Write a description of class Item here.
+ * Tempat item.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sandyka Gunnisyah Putra
+ * @version 1.0
+ * @since 28-02-2019
  */
 public class Item
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected String name;
-    protected int stock;
-    protected int price;
-    protected String category;
+    private int id;
+    private String name;
+    private int stock;
+    private int price;
+    private String category;
+    private Supplier supplier;
 
     /**
      * Constructor for objects of class Item
      */
-    public Item()
+    public Item(int id, String name, int stock, int price, String category, Supplier supplier)
     {
-        // initialise instance variables
+        /* setiap dari line ini bermaksud untuk mengupdate
+         * setiap variabel yang dimasukkan ke dalam
+         * variabel private di dalam class ini
+         */
+        this.id = id;
+        this.name = name;
+        this.stock = stock;
+        this.price = price;
+        this.category = category;
+        this.supplier = supplier;
         
-    }
-
-       
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int getId()
-    {
-        // put your code here
-        return 0;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Constructor for objects of class Item
+     */
+    public int getId()
+    {
+        // untuk mengembalikan nilai id
+        return id;
+    }
+    
+    /**
+     * Untuk mengembalikan nama
+     * 
+     * @return String
      */
     public String getName()
     {
         // put your code here
-        return "";
+        return name;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan stock
+     * 
+     * @return int
      */
     public int getStock()
     {
         // put your code here
-        return 0;
+        return stock;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan harga
+     * 
+     * @return int
      */
     public int getPrice()
     {
         // put your code here
-        return 0;
+        return price;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan kategori
+     * 
+     * @return String
      */
     public String getCategory()
     {
         // put your code here
-        return "";
+        return category;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel id
+     * 
+     * @param id
      */
     public void setId(int id)
     {
         // put your code here
+        this.id = id;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel name
+     * 
+     * @param name
      */
     public void setName(String name)
     {
         // put your code here
+        this.name = name;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel stock
+     * 
+     * @param stock
      */
     public void setStock(int stock)
     {
         // put your code here
+        this.stock = stock;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel harga
+     * 
+     * @param price
      */
     public void setPrice(int price)
     {
         // put your code here
+        this.price = price;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel kategori
+     * 
+     * @param category
      */
     public void setCategory(String category)
     {
         // put your code here
+        this.category = category;
+    }
+    
+    /**
+     * Untuk print nama
+     */
+    public void printData()
+    {
+        System.out.println(name);
     }
 }

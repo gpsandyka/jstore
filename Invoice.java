@@ -1,115 +1,125 @@
 
 /**
- * Write a description of class Invoice here.
+ * Tempat Invoice.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sandyka Gunnisyah Putra
+ * @version 1.0
+ * @since 28-02-2019
  */
 public class Invoice
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected int idItem;
-    protected String date;
-    protected int totalPrice;
+    private int id;
+    private Item item;
+    private String date;
+    private int totalPrice;
 
     /**
      * Constructor for objects of class Invoice
      */
-    public Invoice()
+    public Invoice(int id, Item item, String date, int totalPrice)
     {
         // initialise instance variables
+        this.id = id;
+        this.item = item;
+        this.date = date;
+        this.totalPrice = totalPrice;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan id
+     * 
+     * @return int
      */
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan item
+     * 
+     * @return Item
      */
-    public String getIdItem()
+    public Item getItem()
     {
         // put your code here
-        return "";
+        return item;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan tanggal
+     * 
+     * @return String
      */
     public String getDate()
     {
         // put your code here
-        return "";
+        return date;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan harga total
+     * 
+     * @return int
      */
     public int getTotalPrice()
     {
         // put your code here
-        return 0;
+        return totalPrice;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel id
+     * 
+     * @param id
      */
     public void setId(int id)
     {
         // put your code here
+        this.id = id;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel item
+     * 
+     * @param item
      */
-    public void setIdItem(int idItem)
+    public void setItem(Item item)
     {
         // put your code here
+        this.item = item;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel date
+     * 
+     * @param date
      */
     public void setDate(String date)
     {
         // put your code here
+        this.date = date;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel harga total
+     * 
+     * @param totalPrice
      */
     public void setTotalPrice(int totalPrice)
     {
         // put your code here
+        this.totalPrice = totalPrice;
+    }
+    
+    /**
+     * Untuk print harga total
+     * 
+     */
+    public void printData()
+    {
+        System.out.println(totalPrice);
     }
 }

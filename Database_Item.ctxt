@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=Database_Item
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Database_Item\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=void\ addItem()
-comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-comment2.params=
-comment2.target=void\ removeItem()
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment0.text=\r\n\ Tempat\ database\ item.\r\n\r\n\ @author\ Sandyka\ Gunnisyah\ Putra\r\n\ @version\ 1.0\r\n\ @since\ 28-02-2019\r\n
+comment1.params=item
+comment1.target=boolean\ addItem(Item)
+comment1.text=\r\n\ Untuk\ menambah\ item\r\n\ \r\n\ @param\ item\r\n\ @return\ boolean\r\n
+comment2.params=item
+comment2.target=boolean\ removeItem(Item)
+comment2.text=\r\n\ Untuk\ menghapus\ item\r\n\ \r\n\ @param\ item\r\n\ @return\ boolean\r\n
 comment3.params=
-comment3.target=void\ getItemDatabase()
-comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
-numComments=4
+comment3.target=Item\ getItem()
+comment3.text=\r\n\ Untuk\ mengembalikan\ item\r\n\ \r\n\ @return\ Item\r\n
+comment4.params=
+comment4.target=java.lang.String[]\ getItemDatabase()
+comment4.text=\r\n\ Untuk\ mengembalikan\ daftar\ item\r\n\ \r\n\ @return\ String[]\r\n
+numComments=5

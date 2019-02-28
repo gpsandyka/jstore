@@ -1,139 +1,149 @@
 
 /**
- * Write a description of class Supplier here.
+ * Tempat pengsuplai.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sandyka Gunnisyah Putra
+ * @version 1.0
+ * @since 28-02-2019
  */
 public class Supplier
 {
     // instance variables - replace the example below with your own
-    protected int id;
-    protected String name;
-    protected String email;
-    protected String phoneNumber;
-    protected String city;
+    private int id;
+    private String name;
+    private String email;
+    private int phoneNumber;
+    private Location location;
 
     /**
      * Constructor for objects of class Supplier
      */
-    public Supplier()
+    public Supplier(int id, String name, String email, int phoneNumber, Location location)
     {
         // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan id
+     * 
+     * @return id
      */
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan nama
+     * 
+     * @return String
      */
     public String getName()
     {
         // put your code here
-        return "";
+        return name;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan email
+     * 
+     * @return String
      */
     public String getEmail()
     {
         // put your code here
-        return "";
+        return email;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan nomor telepon
+     * 
+     * @return int
      */
-    public String getPhoneNumber()
+    public int getPhoneNumber()
     {
         // put your code here
-        return "";
+        return phoneNumber;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengembalikan alamat
+     * 
+     * @return Location
      */
-    public String getCity()
+    public Location getLocation()
     {
         // put your code here
-        return "";
+        return location;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel id
+     * 
+     * @param id
      */
     public void setId(int id)
     {
         // put your code here
+        this.id = id;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel nama
+     * 
+     * @param name
      */
     public void setName(String name)
     {
         // put your code here
+        this.name = name;
     }
-    
+
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk mengupdate variabel email
+     * 
+     * @param email
      */
     public void setEmail(String email)
     {
         // put your code here
+        this.email = email;
+    }
+
+    /**
+     * Untuk mengupdate variabel nomor telepon
+     * 
+     * @param phoneNumber
+     */
+    public void setPhoneNumber(int phoneNumber)
+    {
+        // put your code here
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Untuk mengupdate variabel alamat
+     * 
+     * @param Location
+     */
+    public void setLocation(Location location)
+    {
+        // put your code here
+        this.location = location;
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Untuk print nama pengsuplai
+     * 
      */
-    public void setPhoneNumber(String phoneNumber)
+    public void printData()
     {
-        // put your code here
-    }
-    
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public void setCity(String city)
-    {
-        // put your code here
+        System.out.println(name);
     }
 }
