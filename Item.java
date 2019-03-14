@@ -13,13 +13,14 @@ public class Item
     private String name;
     private int stock;
     private int price;
-    private String category;
+    private ItemCategory category;
+    private ItemStatus status;
     private Supplier supplier;
 
     /**
      * Constructor for objects of class Item
      */
-    public Item(int id, String name, int stock, int price, String category, Supplier supplier)
+    public Item(int id, String name, int stock, ItemStatus status, int price, ItemCategory category, Supplier supplier)
     {
         /* setiap dari line ini bermaksud untuk mengupdate
          * setiap variabel yang dimasukkan ke dalam
@@ -28,6 +29,7 @@ public class Item
         this.id = id;
         this.name = name;
         this.stock = stock;
+        this.status = status;
         this.price = price;
         this.category = category;
         this.supplier = supplier;
@@ -35,7 +37,9 @@ public class Item
     }
     
     /**
-     * Constructor for objects of class Item
+     * Untuk mengembalikan Id
+     * 
+     * @return int
      */
     public int getId()
     {
@@ -81,10 +85,21 @@ public class Item
      * 
      * @return String
      */
-    public String getCategory()
+    public ItemCategory getCategory()
     {
         // put your code here
         return category;
+    }
+    
+    /**
+     * Untuk mengembalikan status
+     * 
+     * @return String
+     */
+    public ItemStatus getStatus()
+    {
+        // put your code here
+        return status;
     }
 
     /**
@@ -136,17 +151,34 @@ public class Item
      * 
      * @param category
      */
-    public void setCategory(String category)
+    public void setCategory(ItemCategory category)
     {
         // put your code here
         this.category = category;
     }
     
     /**
-     * Untuk print nama
+     * Untuk mengupdate variabel status
+     * 
+     * @param category
+     */
+    public void setStatus(ItemStatus status)
+    {
+        // put your code here
+        this.status = status;
+    }
+    
+    /**
+     * Untuk print data-data yang penting
      */
     public void printData()
     {
-        System.out.println(name);
+        System.out.println("===ITEM===");
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + name);
+        System.out.println("Stock : " + stock);
+        System.out.println("Category : " + category);
+        System.out.println("Status : " + status);
+        System.out.println("Supplier : " + supplier.getName());
     }
 }

@@ -1,8 +1,9 @@
 /**
- * Write a description of class JStore here.
+ * Tempat fungsi utama JStore
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Sandyka Gunnisyah Putra
+ * @version 1.0
+ * @since 28-02-2019
  */
 public class JStore
 {
@@ -17,13 +18,22 @@ public class JStore
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Letak dari program utama JStore
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
      */
-    public void main (String[] args)
+    public static void main (String[] args)
     {
-        // put your code here
+        Location rumah = new Location("Bandung", "Jawa Barat", "Home Sweet Home~");
+        Supplier suplai = new Supplier(1606906023, "Sandyka Gunnisyah Putra", "sandyka.gunnisyah@ui.ac.id", "082240862188", rumah);
+        
+        rumah.printData();
+        suplai.printData();
+        
+        Transaction.orderNewItem(suplai);
+        Transaction.orderSecondItem(suplai);
+        Transaction.orderRefurbishedItem(suplai);
+        Transaction.sellItemPaid(Database_Item.getItem());
+        Transaction.sellItemUnpaid(Database_Item.getItem());
+        Transaction.sellItemInstallment(Database_Item.getItem());
     }
 }

@@ -12,13 +12,13 @@ public class Supplier
     private int id;
     private String name;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
     private Location location;
 
     /**
      * Constructor for objects of class Supplier
      */
-    public Supplier(int id, String name, String email, int phoneNumber, Location location)
+    public Supplier(int id, String name, String email, String phoneNumber, Location location)
     {
         // initialise instance variables
         this.id = id;
@@ -66,7 +66,7 @@ public class Supplier
      * 
      * @return int
      */
-    public int getPhoneNumber()
+    public String getPhoneNumber()
     {
         // put your code here
         return phoneNumber;
@@ -121,7 +121,7 @@ public class Supplier
      * 
      * @param phoneNumber
      */
-    public void setPhoneNumber(int phoneNumber)
+    public void setPhoneNumber(String phoneNumber)
     {
         // put your code here
         this.phoneNumber = phoneNumber;
@@ -139,11 +139,16 @@ public class Supplier
     }
     
     /**
-     * Untuk print nama pengsuplai
+     * Untuk print data-data yang penting
      * 
      */
     public void printData()
     {
-        System.out.println(name);
+        System.out.println("===SUPPLIER===");
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + name);
+        System.out.println("Email : " + email);
+        System.out.println("Phone Number : " + phoneNumber);
+        System.out.println("Location : " + location.getCity() + ", " + location.getProvince());
     }
 }

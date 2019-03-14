@@ -10,7 +10,7 @@ public class Database_Item
 {
     // instance variables - replace the example below with your own
     private String listItem[];
-    private Item item;
+    public static Item itemDB;
 
     /**
      * Untuk menambah item
@@ -18,10 +18,11 @@ public class Database_Item
      * @param item
      * @return boolean
      */
-    public boolean addItem(Item item)
+    public static boolean addItem(Item item)
     {
         // put your code here
-        return false;
+        itemDB = item;
+        return true;
     }
 
     /**
@@ -30,7 +31,7 @@ public class Database_Item
      * @param item
      * @return boolean
      */
-    public boolean removeItem(Item item)
+    public static boolean removeItem(Item item)
     {
         // put your code here
         return false;
@@ -41,10 +42,10 @@ public class Database_Item
      * 
      * @return Item
      */
-    public Item getItem()
+    public static Item getItem()
     {
         // put your code here
-        return item;
+        return itemDB;
     }
     
     /**

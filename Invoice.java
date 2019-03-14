@@ -13,6 +13,8 @@ public class Invoice
     private Item item;
     private String date;
     private int totalPrice;
+    private int totalItem;
+    private InvoiceStatus status;
 
     /**
      * Constructor for objects of class Invoice
@@ -69,6 +71,28 @@ public class Invoice
         // put your code here
         return totalPrice;
     }
+    
+    /**
+     * Untuk mengembalikan jumlah barang total
+     * 
+     * @return int
+     */
+    public int getTotalItem()
+    {
+        // put your code here
+        return totalItem;
+    }
+    
+    /**
+     * Untuk mengembalikan status invoice
+     * 
+     * @return String
+     */
+    public InvoiceStatus getInvoiceStatus()
+    {
+        // put your code here
+        return status;
+    }
 
     /**
      * Untuk mengupdate variabel id
@@ -115,11 +139,39 @@ public class Invoice
     }
     
     /**
-     * Untuk print harga total
+     * Untuk mengupdate variabel jumlah barang total
+     * 
+     * @param totalItem
+     */
+    public void setTotalItem(int totalItem)
+    {
+        // put your code here
+        this.totalItem = totalItem;
+    }
+    
+    /**
+     * Untuk mengupdate variabel jumlah barang total
+     * 
+     * @param String
+     */
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        // put your code here
+        this.status = status;
+    }
+    
+    /**
+     * Untuk print data-data yang penting
      * 
      */
     public void printData()
     {
-        System.out.println(totalPrice);
+        System.out.println("===INVOICE===");
+        System.out.println("ID : " + id);
+        System.out.println("Date : " + date);
+        System.out.println("Item : " + item.getName());
+        System.out.println("Total Item : " + totalItem);
+        System.out.println("Total Harga : " + totalPrice);
+        System.out.println("Status : " + status);
     }
 }

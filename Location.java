@@ -91,11 +91,14 @@ public class Location
     }
     
     /**
-     * Untuk print nama provinsi
+     * Untuk print data-data yang penting
      * 
      */
     public void printData()
     {
-        System.out.println(province);
+        System.out.println("===LOCATION===");
+        System.out.println("Province : " + province);
+        System.out.println("City : " + city);
+        System.out.println("Decription : " + description);
     }
 }
