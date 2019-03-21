@@ -1,10 +1,9 @@
-
 /**
  * Letak transaksi berlangsung
  *
  * @author Sandyka Gunnisyah Putra
- * @version 1.0
- * @since 28-02-2019
+ * @version 1.4
+ * @since 21-03-2019
  */
 public class Transaction
 {
@@ -14,23 +13,20 @@ public class Transaction
      *
      * @param supplier
      */
-    public static void orderNewItem(Supplier supplier)
+    public static void orderNewItem(Item item)
     {
-        Item barang = new Item(1, "Aghanim's Scepter", 9999, ItemStatus.New, 4200, ItemCategory.Stationery, supplier);
-        
-        Database_Item.addItem(barang);
-        
-        Invoice pembelian = new Invoice(1, barang, "06-03-2019 00:27", 4200);
-        
-        barang.setStatus(ItemStatus.New);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Paid);
-        
-        barang.setStatus(ItemStatus.Sold);
+        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+       
+        if(belibayar instanceof Sell_Paid){
+            System.out.println("Benar Invoice Type adalah Sell_Paid");
+        }
+        else {
+            System.out.println("Salah, Invoice Type bukan Sell _Paid");
+        }
         
         System.out.println("===Order New Item===");
-        pembelian.printData();
-        barang.printData();
+        belibayar.printData();
+        item.printData();
     }
     
     /**
@@ -38,23 +34,20 @@ public class Transaction
      *
      * @param supplier
      */
-    public static void orderSecondItem(Supplier supplier)
+    public static void orderSecondItem(Item item)
     {
-        Item barang = new Item(1, "Aghanim's Scepter", 9999, ItemStatus.New, 4200, ItemCategory.Stationery, supplier);
-        
-        Database_Item.addItem(barang);
-        
-        Invoice pembelian = new Invoice(1, barang, "06-03-2019 00:27", 4200);
-        
-        barang.setStatus(ItemStatus.Second);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Paid);
-        
-        barang.setStatus(ItemStatus.Sold);
+        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+       
+        if(belibayar instanceof Sell_Paid){
+            System.out.println("Benar Invoice Type adalah Sell_Paid");
+        }
+        else {
+            System.out.println("Salah, Invoice Type bukan Sell _Paid");
+        }
         
         System.out.println("===Order Second Item===");
-        pembelian.printData();
-        barang.printData();
+        belibayar.printData();
+        item.printData();
     }
     
     /**
@@ -62,23 +55,20 @@ public class Transaction
      *
      * @param supplier
      */
-    public static void orderRefurbishedItem(Supplier supplier)
+    public static void orderRefurbishedItem(Item item)
     {
-        Item barang = new Item(1, "Aghanim's Scepter", 9999, ItemStatus.New, 4200, ItemCategory.Stationery, supplier);
-        
-        Database_Item.addItem(barang);
-        
-        Invoice pembelian = new Invoice(1, barang, "06-03-2019 00:27", 4200);
-        
-        barang.setStatus(ItemStatus.New);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Paid);
-        
-        barang.setStatus(ItemStatus.Refurbished);
+        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+       
+        if(belibayar instanceof Sell_Paid){
+            System.out.println("Benar Invoice Type adalah Sell_Paid");
+        }
+        else {
+            System.out.println("Salah, Invoice Type bukan Sell _Paid");
+        }
         
         System.out.println("===Order Refurbished Item===");
-        pembelian.printData();
-        barang.printData();
+        belibayar.printData();
+        item.printData();
     }
     
     /**
@@ -88,14 +78,11 @@ public class Transaction
      */
     public static void sellItemPaid(Item item)
     {
-        Invoice pembelian = new Invoice(1, item, "06-03-2019 00:27", 4200);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Paid);
-        
-        item.setStatus(ItemStatus.Sold);
-        
+        Invoice jualbayar = new Sell_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+       
         System.out.println("===Sell Item Paid===");
-        pembelian.printData();
+        jualbayar.printData();
+        item.printData();
     }
     
     /**
@@ -105,14 +92,11 @@ public class Transaction
      */
     public static void sellItemUnpaid(Item item)
     {
-        Invoice pembelian = new Invoice(1, item, "06-03-2019 00:27", 4200);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Unpaid);
-        
-        item.setStatus(ItemStatus.Sold);
-        
+        Invoice jualtakbayar = new Sell_Unpaid(1, item, "21-03-2019", 1, item.getPrice(), "27-03-2019");  
+       
         System.out.println("===Sell Item Unpaid===");
-        pembelian.printData();
+        jualtakbayar.printData();
+        item.printData();
     }
     
     /**
@@ -122,13 +106,10 @@ public class Transaction
      */
     public static void sellItemInstallment(Item item)
     {
-        Invoice pembelian = new Invoice(1, item, "06-03-2019 00:27", 4200);
-        
-        pembelian.setInvoiceStatus(InvoiceStatus.Installment);
-        
-        item.setStatus(ItemStatus.Sold);
-        
+        Invoice jualinstall = new Sell_Installment(1, item, "21-03-2019", 1, item.getPrice(), 6);  
+       
         System.out.println("===Sell Item Installment===");
-        pembelian.printData();
+        jualinstall.printData();
+        item.printData();
     }
 }

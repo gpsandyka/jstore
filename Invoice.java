@@ -3,28 +3,30 @@
  * Tempat Invoice.
  *
  * @author Sandyka Gunnisyah Putra
- * @version 1.0
- * @since 28-02-2019
+ * @version 1.1
+ * @since 21-03-2019
  */
-public class Invoice
+public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
     private Item item;
     private String date;
-    private int totalPrice;
+    protected int totalPrice;
     private int totalItem;
     private InvoiceStatus status;
+    private InvoiceType type;
 
     /**
      * Constructor for objects of class Invoice
      */
-    public Invoice(int id, Item item, String date, int totalPrice)
+    public Invoice(int id, Item item, String date, int totalItem, int totalPrice)
     {
         // initialise instance variables
         this.id = id;
         this.item = item;
         this.date = date;
+        this.totalItem = totalItem;
         this.totalPrice = totalPrice;
     }
 
@@ -93,7 +95,18 @@ public class Invoice
         // put your code here
         return status;
     }
-
+    
+    /**
+     * Untuk mengembalikan tipe invoice
+     * 
+     * @return String
+     */
+    public InvoiceType getInvoiceType()
+    {
+        // put your code here
+        return type;
+    }
+    
     /**
      * Untuk mengupdate variabel id
      * 
@@ -164,7 +177,8 @@ public class Invoice
      * Untuk print data-data yang penting
      * 
      */
-    public void printData()
+    public abstract void printData();
+    /*
     {
         System.out.println("===INVOICE===");
         System.out.println("ID : " + id);
@@ -172,6 +186,7 @@ public class Invoice
         System.out.println("Item : " + item.getName());
         System.out.println("Total Item : " + totalItem);
         System.out.println("Total Harga : " + totalPrice);
-        System.out.println("Status : " + status);
+        System.out.println("Status : Undefined"); //Seharusnya method ini tidak dijalankan karena setiap subclass telah meng override method ini
     }
+    */
 }

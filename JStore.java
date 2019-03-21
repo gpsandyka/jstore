@@ -25,15 +25,14 @@ public class JStore
     {
         Location rumah = new Location("Bandung", "Jawa Barat", "Home Sweet Home~");
         Supplier suplai = new Supplier(1606906023, "Sandyka Gunnisyah Putra", "sandyka.gunnisyah@ui.ac.id", "082240862188", rumah);
+        Item headset = new Item(1, "Headset Razor", 9999, ItemStatus.New, 500000, ItemCategory.Electronics, suplai);
         
         rumah.printData();
         suplai.printData();
         
-        Transaction.orderNewItem(suplai);
-        Transaction.orderSecondItem(suplai);
-        Transaction.orderRefurbishedItem(suplai);
-        Transaction.sellItemPaid(Database_Item.getItem());
-        Transaction.sellItemUnpaid(Database_Item.getItem());
-        Transaction.sellItemInstallment(Database_Item.getItem());
+        Transaction.orderNewItem(headset);
+        Transaction.sellItemPaid(headset);
+        Transaction.sellItemUnpaid(headset);
+        Transaction.sellItemInstallment(headset);
     }
 }
