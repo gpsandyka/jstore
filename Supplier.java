@@ -142,13 +142,16 @@ public class Supplier
      * Untuk print data-data yang penting
      * 
      */
-    public void printData()
+    public String toString()
     {
+        return ("ID : " + id + "\nName : " + name + "\nEmail : " + email + "\nPhone Number : " + phoneNumber);
+        /*
         System.out.println("===SUPPLIER===");
         System.out.println("ID : " + id);
         System.out.println("Name : " + name);
         System.out.println("Email : " + email);
         System.out.println("Phone Number : " + phoneNumber);
         System.out.println("Location : " + location.getCity() + ", " + location.getProvince());
+        */
     }
 }

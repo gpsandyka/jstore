@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Tempat Invoice.
  *
@@ -11,8 +11,8 @@ public abstract class Invoice
     // instance variables - replace the example below with your own
     private int id;
     private Item item;
-    private String date;
-    protected int totalPrice;
+    private Calendar date;
+    private int totalPrice;
     private int totalItem;
     private InvoiceStatus status;
     private InvoiceType type;
@@ -20,14 +20,14 @@ public abstract class Invoice
     /**
      * Constructor for objects of class Invoice
      */
-    public Invoice(int id, Item item, String date, int totalItem, int totalPrice)
+    public Invoice(int id, Item item, int totalItem)
     {
         // initialise instance variables
         this.id = id;
         this.item = item;
-        this.date = date;
         this.totalItem = totalItem;
-        this.totalPrice = totalPrice;
+        totalPrice = item.getPrice() * totalItem;
+        date.getInstance();
     }
 
     /**
@@ -57,7 +57,7 @@ public abstract class Invoice
      * 
      * @return String
      */
-    public String getDate()
+    public Calendar getDate()
     {
         // put your code here
         return date;
@@ -134,7 +134,7 @@ public abstract class Invoice
      * 
      * @param date
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
         // put your code here
         this.date = date;
@@ -177,7 +177,7 @@ public abstract class Invoice
      * Untuk print data-data yang penting
      * 
      */
-    public abstract void printData();
+    public abstract String toString();
     /*
     {
         System.out.println("===INVOICE===");

@@ -3,7 +3,7 @@
  * Invoice penjualan dan dibayar
  *
  * @author Sandyka Gunnisyah Putra
- * @version 1.0
+ * @version 1.5
  * @since 21-03-2019
  */
 public class Sell_Paid extends Invoice
@@ -11,14 +11,16 @@ public class Sell_Paid extends Invoice
     // instance variables - replace the example below with your own
     private InvoiceType INVOICE_TYPE=InvoiceType.Sell;
     private InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
+    private Customer customer;
 
     /**
      * Constructor for objects of class Buy_Paid
      */
-    public Sell_Paid(int id, Item item, String date, int totalItem, int totalPrice)
+    public Sell_Paid(int id, Item item, int totalItem, Customer customer)
     {
         // initialise instance variables
-        super(id, item, date, totalItem, totalPrice);
+        super(id, item, totalItem);
+        this.customer = customer;
         /*
         super.setId(id);
         super.setItem(item);
@@ -29,6 +31,17 @@ public class Sell_Paid extends Invoice
         
     }
 
+    /**
+     * Untuk mengembalikan customer
+     * 
+     * @return Customer
+     */
+    public Customer getCustomer()
+    {
+        // put your code here
+        return customer;
+    }
+    
     /**
      * Untuk mengembalikan status invoice
      * 
@@ -52,11 +65,23 @@ public class Sell_Paid extends Invoice
     }
     
     /**
+     * Untuk memasukkan customer
+     * 
+     * @param customer
+     */
+    public void setCustomer(Customer customer)
+    {
+        // put your code here
+        this.customer = customer;
+    }
+    
+    /**
      * Untuk print data-data yang penting
      * 
      */
-    public void printData()
+    public String toString()
     {
+        /*
         System.out.println("===INVOICE===");
         System.out.println("ID : " + super.getId());
         System.out.println("Date : " + super.getDate());
@@ -64,5 +89,7 @@ public class Sell_Paid extends Invoice
         System.out.println("Total Item : " + super.getTotalItem());
         System.out.println("Total Harga : " + super.getTotalPrice());
         System.out.println("Status : " + INVOICE_STATUS);
+        */
+        return "";
     }
 }

@@ -15,10 +15,10 @@ public class Buy_Paid extends Invoice
     /**
      * Constructor for objects of class Buy_Paid
      */
-    public Buy_Paid(int id, Item item, String date, int totalItem, int totalPrice)
+    public Buy_Paid(int id, Item item, int totalItem)
     {
         // initialise instance variables
-        super(id, item, date, totalItem, totalPrice);
+        super(id, item, totalItem);
         /*
         super.setId(id);
         super.setItem(item);
@@ -55,14 +55,22 @@ public class Buy_Paid extends Invoice
      * Untuk print data-data yang penting
      * 
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("===INVOICE===");
-        System.out.println("ID : " + super.getId());
-        System.out.println("Date : " + super.getDate());
-        System.out.println("Item : " + (super.getItem()).getName());
+        return  "ID = "+getId()+
+                "\nItem = "+getItem()+
+                "\nAmount = "+getTotalItem()+
+                "\nBuyDate = "+getDate()+
+                "\nPrice = "+getItem().getPrice()+
+                "\nPrice Total = "+getTotalPrice()+
+                "\nSupplier ID = "+getItem().getSupplier()+
+                "\nStatus = PAID"+
+                "\n Buy success";
+        /*
+        System.out.println("===INVOICE=== \nID : " + super.getId() + "\nDate : " + super.getDate() + "\nItem : " + (super.getItem()).getName());
         System.out.println("Total Item : " + super.getTotalItem());
         System.out.println("Total Harga : " + super.getTotalPrice());
         System.out.println("Status : " + INVOICE_STATUS);
+        */
     }
 }

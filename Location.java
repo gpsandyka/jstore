@@ -94,11 +94,14 @@ public class Location
      * Untuk print data-data yang penting
      * 
      */
-    public void printData()
+    public String toString()
     {
+        return ("Province : " + province + "\nCity : " + city + "\nDecription : " + description);
+        /*
         System.out.println("===LOCATION===");
         System.out.println("Province : " + province);
         System.out.println("City : " + city);
         System.out.println("Decription : " + description);
+        */
     }
 }

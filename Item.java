@@ -101,6 +101,17 @@ public class Item
         // put your code here
         return status;
     }
+    
+    /**
+     * Untuk mengembalikan status
+     * 
+     * @return String
+     */
+    public Supplier getSupplier()
+    {
+        // put your code here
+        return supplier;
+    }
 
     /**
      * Untuk mengupdate variabel id
@@ -171,14 +182,18 @@ public class Item
     /**
      * Untuk print data-data yang penting
      */
-    public void printData()
+    public String toString()
     {
+        return ("ID : " + id + "\nName : " + name + "\nStock : " + stock + "\nHarga : " + price + "\nCategory : " + category + "\nStatus : " + status + "\nSupplier : " + supplier.getName());
+        /*
         System.out.println("===ITEM===");
         System.out.println("ID : " + id);
         System.out.println("Name : " + name);
         System.out.println("Stock : " + stock);
+        price
         System.out.println("Category : " + category);
         System.out.println("Status : " + status);
         System.out.println("Supplier : " + supplier.getName());
+        */
     }
 }
