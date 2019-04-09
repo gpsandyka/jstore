@@ -1,35 +1,35 @@
 
 /**
- * Tempat database pengsuplai.
+ * Tempat database pelanggan.
  *
  * @author Sandyka Gunnisyah Putra
- * @version 1.0
- * @since 28-02-2019
+ * @version 1.5
+ * @since 09-04-2019
  */
-public class DatabaseSupplier
+public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private Supplier listSupplier[];
+    private Customer listCustomer[];
     
     /**
      * Untuk menambah pengsuplai
      * 
-     * @param supplier
+     * @param customer
      * @return boolean
      */
-    public boolean addSupplier(Supplier supplier)
+    public boolean addCustomer(Customer customer)
     {
         // put your code here
-        return true;
+        return false;
     }
     
     /**
      * Untuk menghapus pengsuplai
      * 
-     * @param supplier
+     * @param customer
      * @return boolean
      */
-    public void removeSupplier(Supplier supplier)
+    public void removeCustomer(Customer customer)
     {
         // put your code here
     }
@@ -37,12 +37,12 @@ public class DatabaseSupplier
     /**
      * Untuk mengembalikan pengsuplai
      * 
-     * @return Supplier
+     * @return Customer
      */
-    public Supplier getSupplier()
+    public Customer getCustomer()
     {
         // put your code here
-        return listSupplier[0];
+        return listCustomer[0];
     }
     
     /**
@@ -50,9 +50,9 @@ public class DatabaseSupplier
      * 
      * @return String[]
      */
-    public Supplier[] getListSupplier()
+    public Customer[] getListCustomer()
     {
         // put your code here
-        return listSupplier;
+        return listCustomer;
     }
 }

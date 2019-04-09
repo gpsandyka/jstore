@@ -126,6 +126,21 @@ public class Sell_Installment extends Invoice
      */
     public String toString()
     {
+        return  "ID = "+getId()+
+                "\nItem = "+getItem()+
+                "\nAmount = "+getTotalItem()+
+                "\nBuyDate = "+getDate().getTime()+
+                "\nPrice = "+getItem().getPrice()+
+                "\nPrice Total = "+getTotalPrice()+
+                "\nInstallment Price = "+getInstallmentPrice()+
+                "\nSupplier ID : "+getItem().getSupplier().getId()+
+                "\nSupplier Name = "+getItem().getSupplier().getName()+
+                "\nCustomer ID : "+getCustomer().getId()+
+                "\nCustomer Name = "+getCustomer().getName()+
+                "\nStatus = INSTALLMENT"+
+                "\nInstallment Period = "+getInstallmentPeriod()+ " days"+
+                "\nSell success.";
+        
         /*
         System.out.println("===INVOICE===");
         System.out.println("ID : " + super.getId());
@@ -136,6 +151,5 @@ public class Sell_Installment extends Invoice
         System.out.println("Status : " + INVOICE_STATUS);
         System.out.println("Harga Instalasi : " + installmentPrice);
         */
-       return "";
     }
 }

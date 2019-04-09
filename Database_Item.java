@@ -9,8 +9,7 @@
 public class Database_Item
 {
     // instance variables - replace the example below with your own
-    private String listItem[];
-    public static Item itemDB;
+    private static Item listItem[];
 
     /**
      * Untuk menambah item
@@ -21,7 +20,7 @@ public class Database_Item
     public static boolean addItem(Item item)
     {
         // put your code here
-        itemDB = item;
+        listItem[0] = item;
         return true;
     }
 
@@ -34,7 +33,8 @@ public class Database_Item
     public static boolean removeItem(Item item)
     {
         // put your code here
-        return false;
+        listItem[0] = null;
+        return true;
     }
     
     /**
@@ -45,7 +45,7 @@ public class Database_Item
     public static Item getItem()
     {
         // put your code here
-        return itemDB;
+        return listItem[0];
     }
     
     /**
@@ -53,7 +53,7 @@ public class Database_Item
      * 
      * @return String[]
      */
-    public String[] getItemDatabase()
+    public Item[] getItemDatabase()
     {
         // put your code here
         return listItem;

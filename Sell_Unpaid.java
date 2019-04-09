@@ -23,7 +23,7 @@ public class Sell_Unpaid extends Invoice
         // initialise instance variables
         super(id, item, totalItem);
         this.customer = customer;
-        dueDate.getInstance();
+        dueDate = dueDate.getInstance();
         dueDate.add(Calendar.DAY_OF_MONTH, 1); 
         /*
         super.setId(id);
@@ -104,6 +104,20 @@ public class Sell_Unpaid extends Invoice
      u// */
     public String toString()
     {
+        return  "ID = "+getId()+
+                "\nItem = "+getItem()+
+                "\nAmount = "+getTotalItem()+
+                "\nBuyDate = "+getDate().getTime()+
+                "\nPrice = "+getItem().getPrice()+
+                "\nPrice Total = "+getTotalPrice()+
+                "\nSupplier ID : "+getItem().getSupplier().getId()+
+                "\nSupplier Name = "+getItem().getSupplier().getName()+
+                "\nCustomer ID = "+getCustomer().getId()+
+                "\nCustomer Name : "+getCustomer().getName()+
+                "\nStatus = UNPAID"+
+                "\nDue Date = "+getDueDate().getTime()+
+                "\nIf payment is not received by Due Date, transaction will be canceled.";
+        
         /*
         System.out.println("===INVOICE===");
         System.out.println("ID : " + super.getId());
@@ -114,6 +128,5 @@ public class Sell_Unpaid extends Invoice
         System.out.println("Status : " + INVOICE_STATUS);
         System.out.println("Due Date : " + dueDate);
         */
-       return "";
     }
 }

@@ -27,7 +27,7 @@ public abstract class Invoice
         this.item = item;
         this.totalItem = totalItem;
         totalPrice = item.getPrice() * totalItem;
-        date.getInstance();
+        date = date.getInstance();
     }
 
     /**

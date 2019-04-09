@@ -15,7 +15,7 @@ public class Transaction
      */
     public static void orderNewItem(Item item)
     {
-        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+        Invoice belibayar = new Buy_Paid(1, item, 1);  
        
         if(belibayar instanceof Sell_Paid){
             System.out.println("Benar Invoice Type adalah Sell_Paid");
@@ -25,8 +25,8 @@ public class Transaction
         }
         
         System.out.println("===Order New Item===");
-        belibayar.printData();
-        item.printData();
+        item.toString();
+        belibayar.toString();
     }
     
     /**
@@ -36,7 +36,7 @@ public class Transaction
      */
     public static void orderSecondItem(Item item)
     {
-        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+        Invoice belibayar = new Buy_Paid(1, item, 1);  
        
         if(belibayar instanceof Sell_Paid){
             System.out.println("Benar Invoice Type adalah Sell_Paid");
@@ -46,8 +46,8 @@ public class Transaction
         }
         
         System.out.println("===Order Second Item===");
-        belibayar.printData();
-        item.printData();
+        item.toString();
+        belibayar.toString();
     }
     
     /**
@@ -57,7 +57,7 @@ public class Transaction
      */
     public static void orderRefurbishedItem(Item item)
     {
-        Invoice belibayar = new Buy_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+        Invoice belibayar = new Buy_Paid(1, item, 1);  
        
         if(belibayar instanceof Sell_Paid){
             System.out.println("Benar Invoice Type adalah Sell_Paid");
@@ -67,8 +67,8 @@ public class Transaction
         }
         
         System.out.println("===Order Refurbished Item===");
-        belibayar.printData();
-        item.printData();
+        item.toString();
+        belibayar.toString();
     }
     
     /**
@@ -76,13 +76,13 @@ public class Transaction
      *
      * @param item
      */
-    public static void sellItemPaid(Item item)
+    public static void sellItemPaid(Item item, Customer customer)
     {
-        Invoice jualbayar = new Sell_Paid(1, item, "21-03-2019", 1, item.getPrice());  
+        Invoice jualbayar = new Sell_Paid(1, item, 1, customer);  
        
         System.out.println("===Sell Item Paid===");
-        jualbayar.printData();
-        item.printData();
+        item.toString();
+        jualbayar.toString();
     }
     
     /**
@@ -90,13 +90,13 @@ public class Transaction
      *
      * @param item
      */
-    public static void sellItemUnpaid(Item item)
+    public static void sellItemUnpaid(Item item, Customer customer)
     {
-        Invoice jualtakbayar = new Sell_Unpaid(1, item, "21-03-2019", 1, item.getPrice(), "27-03-2019");  
+        Invoice jualtakbayar = new Sell_Unpaid(1, item, 1, customer);  
        
         System.out.println("===Sell Item Unpaid===");
-        jualtakbayar.printData();
-        item.printData();
+        item.toString();
+        jualtakbayar.toString();;
     }
     
     /**
@@ -104,12 +104,12 @@ public class Transaction
      *
      * @param item
      */
-    public static void sellItemInstallment(Item item)
+    public static void sellItemInstallment(Item item, Customer customer)
     {
-        Invoice jualinstall = new Sell_Installment(1, item, "21-03-2019", 1, item.getPrice(), 6);  
+        Invoice jualinstall = new Sell_Installment(1, item, 1, 6, customer);  
        
         System.out.println("===Sell Item Installment===");
-        jualinstall.printData();
-        item.printData();
+        item.toString();
+        jualinstall.toString();
     }
 }

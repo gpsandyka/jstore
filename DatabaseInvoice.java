@@ -1,35 +1,35 @@
 
 /**
- * Tempat database pengsuplai.
+ * Tempat database invoice.
  *
  * @author Sandyka Gunnisyah Putra
- * @version 1.0
- * @since 28-02-2019
+ * @version 1.5
+ * @since 09-04-2019
  */
-public class DatabaseSupplier
+public class DatabaseInvoice
 {
     // instance variables - replace the example below with your own
-    private Supplier listSupplier[];
+    private Invoice listInvoice[];
     
     /**
      * Untuk menambah pengsuplai
      * 
-     * @param supplier
+     * @param invoice
      * @return boolean
      */
-    public boolean addSupplier(Supplier supplier)
+    public boolean addInvoice(Invoice invoice)
     {
         // put your code here
-        return true;
+        return false;
     }
     
     /**
      * Untuk menghapus pengsuplai
      * 
-     * @param supplier
+     * @param invoice
      * @return boolean
      */
-    public void removeSupplier(Supplier supplier)
+    public void removeInvoice(Invoice invoice)
     {
         // put your code here
     }
@@ -37,12 +37,12 @@ public class DatabaseSupplier
     /**
      * Untuk mengembalikan pengsuplai
      * 
-     * @return Supplier
+     * @return Invoice
      */
-    public Supplier getSupplier()
+    public Invoice getInvoice()
     {
         // put your code here
-        return listSupplier[0];
+        return listInvoice[0];
     }
     
     /**
@@ -50,9 +50,9 @@ public class DatabaseSupplier
      * 
      * @return String[]
      */
-    public Supplier[] getListSupplier()
+    public Invoice[] getListInvoice()
     {
         // put your code here
-        return listSupplier;
+        return listInvoice;
     }
 }

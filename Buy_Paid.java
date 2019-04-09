@@ -60,12 +60,12 @@ public class Buy_Paid extends Invoice
         return  "ID = "+getId()+
                 "\nItem = "+getItem()+
                 "\nAmount = "+getTotalItem()+
-                "\nBuyDate = "+getDate()+
+                "\nBuyDate = "+getDate().getTime()+
                 "\nPrice = "+getItem().getPrice()+
                 "\nPrice Total = "+getTotalPrice()+
-                "\nSupplier ID = "+getItem().getSupplier()+
+                "\nSupplier ID : "+getItem().getSupplier().getId()+
                 "\nStatus = PAID"+
-                "\n Buy success";
+                "\nBuy success.";
         /*
         System.out.println("===INVOICE=== \nID : " + super.getId() + "\nDate : " + super.getDate() + "\nItem : " + (super.getItem()).getName());
         System.out.println("Total Item : " + super.getTotalItem());
