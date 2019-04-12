@@ -13,6 +13,7 @@ public class Sell_Unpaid extends Invoice
     private InvoiceStatus INVOICE_STATUS=InvoiceStatus.Unpaid;
     private Calendar dueDate;
     private Customer customer;
+    private boolean isActive;
 
 
     /**
@@ -25,6 +26,7 @@ public class Sell_Unpaid extends Invoice
         this.customer = customer;
         dueDate = dueDate.getInstance();
         dueDate.add(Calendar.DAY_OF_MONTH, 1); 
+        isActive = true;
         /*
         super.setId(id);
         super.setItem(item);
@@ -104,6 +106,14 @@ public class Sell_Unpaid extends Invoice
      u// */
     public String toString()
     {
+        String temp = "";
+        for (int id : getItem()) {
+            temp = temp + DatabaseItem.getItemFromID(id).toString();
+        }
+        
+        return temp;
+        
+        /*
         return  "ID = "+getId()+
                 "\nItem = "+getItem()+
                 "\nAmount = "+getTotalItem()+
@@ -116,7 +126,7 @@ public class Sell_Unpaid extends Invoice
                 "\nCustomer Name : "+getCustomer().getName()+
                 "\nStatus = UNPAID"+
                 "\nDue Date = "+getDueDate().getTime()+
-                "\nIf payment is not received by Due Date, transaction will be canceled.";
+                "\nIf payment is not received by Due Date, transaction will be canceled.";*/
         
         /*
         System.out.println("===INVOICE===");

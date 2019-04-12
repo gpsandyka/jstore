@@ -12,6 +12,7 @@ public class Sell_Paid extends Invoice
     private InvoiceType INVOICE_TYPE=InvoiceType.Sell;
     private InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
     private Customer customer;
+    private boolean isActive;
 
     /**
      * Constructor for objects of class Buy_Paid
@@ -21,6 +22,7 @@ public class Sell_Paid extends Invoice
         // initialise instance variables
         super(id, item, totalItem);
         this.customer = customer;
+        isActive = false;
         /*
         super.setId(id);
         super.setItem(item);
@@ -81,6 +83,14 @@ public class Sell_Paid extends Invoice
      */
     public String toString()
     {
+        String temp = "";
+        for (int id : getItem()) {
+            temp = temp + DatabaseItem.getItemFromID(id).toString();
+        }
+        
+        return temp;
+        
+        /*
         return  "ID = "+getId()+
                 "\nItem = "+getItem()+
                 "\nAmount = "+getTotalItem()+
@@ -93,6 +103,7 @@ public class Sell_Paid extends Invoice
                 "\nCustomer Name = "+getCustomer().getName()+
                 "\nStatus = PAID"+
                 "\nSell success.";
+                */
         
         /*
         System.out.println("===INVOICE===");

@@ -25,13 +25,13 @@ public class Customer
     /**
      * Constructor for objects of class Customer
      */
-    public Customer(String name, String email, String username, String password, int id, Calendar birthDate)
+    public Customer(String name, String email, String username, String password, Calendar birthDate)
     {
         this.name=name;
         this.email=email;
         this.username=username;
         this.password=password;
-        this.id=id;
+        id = DatabaseCustomer.getLastCustomerID() + 1;
         this.birthDate=birthDate;
     }
     
@@ -123,32 +123,32 @@ public class Customer
         // put your code here
         return birthDate;
     }
-    
+    /*
     public static void test()
     {
         Customer cus1 = new Customer("Daika", "Daika@sama", "Balabala", "1sampai6", 5, new GregorianCalendar(1995,5,5));
         Customer cus2 = new Customer("Daika", "Daika@sama", "Balabala", "1sampai6", 5, new GregorianCalendar(1995,5,5));
         Customer cus3 = new Customer("Daika", "Daika@sama", "Balabala", "1sampai6", 5, new GregorianCalendar(1995,5,5));
-        /*
+        
         cus1.setEmail("e.t.d@");
         cus2.setEmail("Ee_.td@ui.ac.id");
         cus3.setEmail("Sandyka.modul5@netlab.com");
         System.out.println(cus1.getEmail());
         System.out.println(cus2.getEmail());
         System.out.println(cus3.getEmail());
-        */
+        
         cus1.setPassword("Netlab2019");
         cus2.setPassword("Netlab");
         cus3.setPassword("netlab2019");
         System.out.println(cus1.getPassword());
         System.out.println(cus2.getPassword());
         System.out.println(cus3.getPassword());
-        /*
+        
         Calendar cal = cus.getBirthDate();
         //System.out.printf("Birth date: %d %s %d", cal.get(Calendar.DATE), cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US), cal.get(Calendar.YEAR));
         System.out.println("Birth date: " + cal.get(Calendar.DATE) + " " + cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + cal.get(Calendar.YEAR));
-        */
-    }
+        
+    }*/
     
     /**
      * An example of a method - replace this comment with your own

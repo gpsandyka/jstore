@@ -14,6 +14,7 @@ public class Sell_Installment extends Invoice
     private int installmentPeriod;
     private int installmentPrice;
     private Customer customer;
+    private boolean isActive;
 
     /**
      * Constructor for objects of class Buy_Paid
@@ -24,6 +25,7 @@ public class Sell_Installment extends Invoice
         super(id, item, totalItem);
         this.installmentPeriod = installmentPeriod;
         this.customer = customer;
+        isActive = true;
         //this.installmentPrice = (int)(totalPrice*1.02/installmentPeriod);
         /*
         super.setId(id);
@@ -126,6 +128,14 @@ public class Sell_Installment extends Invoice
      */
     public String toString()
     {
+        String temp = "";
+        for (int id : getItem()) {
+            temp = temp + DatabaseItem.getItemFromID(id).toString();
+        }
+        
+        return temp;
+        
+        /*
         return  "ID = "+getId()+
                 "\nItem = "+getItem()+
                 "\nAmount = "+getTotalItem()+
@@ -139,7 +149,7 @@ public class Sell_Installment extends Invoice
                 "\nCustomer Name = "+getCustomer().getName()+
                 "\nStatus = INSTALLMENT"+
                 "\nInstallment Period = "+getInstallmentPeriod()+ " days"+
-                "\nSell success.";
+                "\nSell success."; */
         
         /*
         System.out.println("===INVOICE===");

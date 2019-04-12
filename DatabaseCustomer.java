@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Tempat database pelanggan.
@@ -9,7 +10,30 @@
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private Customer listCustomer[];
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList();
+    private static int LAST_CUSTOMER_ID = 0;
+    
+    /**
+     * Untuk mengembalikan daftar pengsuplai
+     * 
+     * @return String[]
+     */
+    public static ArrayList<Customer> getCustomerDatabase()
+    {
+        // put your code here
+        return CUSTOMER_DATABASE;
+    }
+    
+    /**
+     * Untuk mengembalikan daftar pengsuplai
+     * 
+     * @return String[]
+     */
+    public static int getLastCustomerID()
+    {
+        // put your code here
+        return LAST_CUSTOMER_ID;
+    }
     
     /**
      * Untuk menambah pengsuplai
@@ -17,10 +41,33 @@ public class DatabaseCustomer
      * @param customer
      * @return boolean
      */
-    public boolean addCustomer(Customer customer)
+    public static boolean addCustomer(Customer customer)
     {
         // put your code here
-        return false;
+        for (Customer cus : CUSTOMER_DATABASE) {
+            if (cus.getName() == customer.getName() && cus.getEmail() == customer.getEmail()) {
+                return false; //Pertanda item duplik at
+            }
+        }
+        CUSTOMER_DATABASE.add(customer); //Jika bisa keluar for, pertanda tidak ada item duplikat
+        LAST_CUSTOMER_ID = customer.getId();
+        return true;
+    }
+    
+    /**
+     * Untuk mengembalikan pengsuplai
+     * 
+     * @return Customer
+     */
+    public static Customer getCustomer(int id)
+    {
+        // put your code here
+        for (Customer cus : CUSTOMER_DATABASE) {
+            if (cus.getId() == id) {
+                return cus;
+            }
+        }
+        return null;
     }
     
     /**
@@ -29,30 +76,15 @@ public class DatabaseCustomer
      * @param customer
      * @return boolean
      */
-    public void removeCustomer(Customer customer)
+    public static boolean removeCustomer(int id)
     {
         // put your code here
-    }
-    
-    /**
-     * Untuk mengembalikan pengsuplai
-     * 
-     * @return Customer
-     */
-    public Customer getCustomer()
-    {
-        // put your code here
-        return listCustomer[0];
-    }
-    
-    /**
-     * Untuk mengembalikan daftar pengsuplai
-     * 
-     * @return String[]
-     */
-    public Customer[] getListCustomer()
-    {
-        // put your code here
-        return listCustomer;
+        for (Customer cus : CUSTOMER_DATABASE) {
+            if (cus.getId() == id) {
+                CUSTOMER_DATABASE.remove(cus);
+                return true;
+            }
+        }
+        return false;
     }
 }

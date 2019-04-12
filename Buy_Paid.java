@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Invoice pembelian dan dibayar
  *
@@ -11,14 +11,16 @@ public class Buy_Paid extends Invoice
     // instance variables - replace the example below with your own
     private InvoiceType INVOICE_TYPE=InvoiceType.Buy;
     private InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
+    private boolean isActive;
 
     /**
      * Constructor for objects of class Buy_Paid
      */
-    public Buy_Paid(int id, Item item, int totalItem)
+    public Buy_Paid(ArrayList<Integer> item)
     {
         // initialise instance variables
-        super(id, item, totalItem);
+        super(item);
+        isActive = false;
         /*
         super.setId(id);
         super.setItem(item);
@@ -57,6 +59,13 @@ public class Buy_Paid extends Invoice
      */
     public String toString()
     {
+        String temp = "";
+        for (int id : getItem()) {
+            temp = temp + DatabaseItem.getItemFromID(id).toString();
+        }
+        
+        return temp;
+        /*
         return  "ID = "+getId()+
                 "\nItem = "+getItem()+
                 "\nAmount = "+getTotalItem()+
@@ -66,6 +75,7 @@ public class Buy_Paid extends Invoice
                 "\nSupplier ID : "+getItem().getSupplier().getId()+
                 "\nStatus = PAID"+
                 "\nBuy success.";
+                */
         /*
         System.out.println("===INVOICE=== \nID : " + super.getId() + "\nDate : " + super.getDate() + "\nItem : " + (super.getItem()).getName());
         System.out.println("Total Item : " + super.getTotalItem());

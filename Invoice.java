@@ -10,23 +10,23 @@ public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private Item item;
+    private ArrayList<Integer> item;
     private Calendar date;
     private int totalPrice;
-    private int totalItem;
+    private boolean isActive;
+    private Customer customer;
+    
     private InvoiceStatus status;
-    private InvoiceType type;
 
     /**
      * Constructor for objects of class Invoice
      */
-    public Invoice(int id, Item item, int totalItem)
+    public Invoice(ArrayList<Integer> item)
     {
         // initialise instance variables
-        this.id = id;
+        id = DatabaseInvoice.getLastInvoiceID() + 1;
         this.item = item;
-        this.totalItem = totalItem;
-        totalPrice = item.getPrice() * totalItem;
+        //totalPrice = item.getPrice() * totalItem;
         date = date.getInstance();
     }
 
@@ -46,7 +46,7 @@ public abstract class Invoice
      * 
      * @return Item
      */
-    public Item getItem()
+    public ArrayList<Integer> getItem()
     {
         // put your code here
         return item;
@@ -74,37 +74,41 @@ public abstract class Invoice
         return totalPrice;
     }
     
-    /**
-     * Untuk mengembalikan jumlah barang total
-     * 
-     * @return int
-     */
-    public int getTotalItem()
-    {
-        // put your code here
-        return totalItem;
-    }
-    
+      
     /**
      * Untuk mengembalikan status invoice
      * 
      * @return String
      */
-    public InvoiceStatus getInvoiceStatus()
-    {
-        // put your code here
-        return status;
-    }
+    public abstract InvoiceStatus getInvoiceStatus();
     
     /**
      * Untuk mengembalikan tipe invoice
      * 
      * @return String
      */
-    public InvoiceType getInvoiceType()
+    public abstract InvoiceType getInvoiceType();
+    
+    /**
+     * Untuk mengembalikan tanda aktif
+     * 
+     * @return boolean
+     */
+    public boolean getIsActive()
     {
         // put your code here
-        return type;
+        return isActive;
+    }
+    
+    /**
+     * Untuk mengembalikan pelanggan
+     * 
+     * @return Customer
+     */
+    public Customer getCustomer()
+    {
+        // put your code here
+        return customer;
     }
     
     /**
@@ -123,7 +127,7 @@ public abstract class Invoice
      * 
      * @param item
      */
-    public void setItem(Item item)
+    public void setItem(ArrayList<Integer> item)
     {
         // put your code here
         this.item = item;
@@ -145,23 +149,15 @@ public abstract class Invoice
      * 
      * @param totalPrice
      */
-    public void setTotalPrice(int totalPrice)
+    public void setTotalPrice()
     {
         // put your code here
-        this.totalPrice = totalPrice;
+        for (int id : item) {
+            totalPrice = totalPrice + DatabaseItem.getItemFromID(id).getPrice();
+        }
     }
     
-    /**
-     * Untuk mengupdate variabel jumlah barang total
-     * 
-     * @param totalItem
-     */
-    public void setTotalItem(int totalItem)
-    {
-        // put your code here
-        this.totalItem = totalItem;
-    }
-    
+      
     /**
      * Untuk mengupdate variabel jumlah barang total
      * 
@@ -169,8 +165,18 @@ public abstract class Invoice
      */
     public void setInvoiceStatus(InvoiceStatus status)
     {
-        // put your code here
         this.status = status;
+    }
+    
+    /**
+     * Untuk mengupdate variabel jumlah barang total
+     * 
+     * @param totalItem
+     */
+    public void setIsActive(boolean isActive)
+    {
+        // put your code here
+        this.isActive = isActive;
     }
     
     /**

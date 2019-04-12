@@ -20,13 +20,13 @@ public class Item
     /**
      * Constructor for objects of class Item
      */
-    public Item(int id, String name, int stock, ItemStatus status, int price, ItemCategory category, Supplier supplier)
+    public Item(String name, int stock, ItemStatus status, int price, ItemCategory category, Supplier supplier)
     {
         /* setiap dari line ini bermaksud untuk mengupdate
          * setiap variabel yang dimasukkan ke dalam
          * variabel private di dalam class ini
          */
-        this.id = id;
+        id = DatabaseInvoice.getLastInvoiceID() + 1;
         this.name = name;
         this.stock = stock;
         this.status = status;

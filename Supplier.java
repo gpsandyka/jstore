@@ -18,10 +18,10 @@ public class Supplier
     /**
      * Constructor for objects of class Supplier
      */
-    public Supplier(int id, String name, String email, String phoneNumber, Location location)
+    public Supplier(String name, String email, String phoneNumber, Location location)
     {
         // initialise instance variables
-        this.id = id;
+        id = DatabaseCustomer.getLastCustomerID() + 1;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
