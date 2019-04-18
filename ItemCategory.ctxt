@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=ItemCategory
-comment0.text=\r\n\ Enumerasi\ kategori\ item\r\n\r\n\ @author\ Sandyka\ Gunnisyah\ Putra\r\n\ @version\ 1.0\r\n\ @since\ 14-03-2019\r\n
-comment1.params=category
-comment1.target=ItemCategory(java.lang.String)
-comment2.params=
-comment2.target=java.lang.String\ toString()
-numComments=3
