@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=InvoiceType
+comment0.text=\r\n\ Enumerasi\ tipe\ Invoice\r\n\r\n\ @author\ Sandyka\ Gunnisyah\ Putra\r\n\ @version\ 1.0\r\n\ @since\ 21-03-2019\r\n
+comment1.params=tipe
+comment1.target=InvoiceType(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
